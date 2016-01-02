@@ -66,17 +66,17 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void testAddTwoNumbersFalse() {
-
-        // assert statements
-        assertNotEquals("\"1,2\" must not be 2", 2, calculator.add("1,2"));
-    }
-
-    @Test
     public void testAddMultipleNumbers() {
 
         // assert statements
         assertEquals("\"1,2,3\" must be 6", 6, calculator.add("1,2,3"));
+    }
+
+    @Test
+    public void testAddMultipleNumbersMultipleDelimiters() {
+
+        // assert statements
+        assertEquals("\"1,2\n3\" must be 6", 6, calculator.add("1,2\n3"));
     }
 }
 

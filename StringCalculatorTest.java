@@ -1,5 +1,6 @@
 import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertEquals;
 
 public class StringCalculatorTest {
 
@@ -11,5 +12,12 @@ public class StringCalculatorTest {
         assertNotNull(calculator);
     }
 
+    @Test
+    public void testEmptyStringShouldReturnZero() {
+
+        StringCalculator calculator = new StringCalculator();
+        // assert statements
+        assertEquals("\"\" must be 0", 0, calculator.add(""));
+    }
 }
 

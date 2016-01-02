@@ -7,6 +7,12 @@ public class StringCalculator {
             return 0;
         }
 
-        return 1;
+        String nums[] = numbers.split(",");
+
+        if (nums.length == 1) {
+            return Integer.parseInt(nums[0]);
+        }
+
+        return 0;
     }
 }

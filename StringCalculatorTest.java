@@ -28,5 +28,14 @@ public class StringCalculatorTest {
         assertEquals("\"1\" must be 1", 1, calculator.add("1"));
         assertEquals("\"2\" must be 2", 2, calculator.add("2"));
     }
+
+
+    @Test
+    public void testAddTwoNumbers() {
+
+        StringCalculator calculator = new StringCalculator();
+        // assert statements
+        assertEquals("\"1,2\" must be 3", 3, calculator.add("1,2"));
+    }
 }
 

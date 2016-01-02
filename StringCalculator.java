@@ -13,6 +13,6 @@ public class StringCalculator {
             return Integer.parseInt(nums[0]);
         }
 
-        return 3;
+        return Integer.parseInt(nums[0]) + Integer.parseInt(nums[1]);
     }
 }

@@ -1,13 +1,21 @@
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
 
 public class StringCalculatorTest {
 
+
+    StringCalculator calculator;
+    @Before
+    public void setup() {
+
+        calculator = new StringCalculator();
+    }
+
     @Test
     public void testCreateStringCalculatorObject() {
 
-        StringCalculator calculator = new StringCalculator();
         // assert statements
         assertNotNull(calculator);
     }
@@ -15,7 +23,6 @@ public class StringCalculatorTest {
     @Test
     public void testEmptyStringShouldReturnZero() {
 
-        StringCalculator calculator = new StringCalculator();
         // assert statements
         assertEquals("\"\" must be 0", 0, calculator.add(""));
     }
@@ -23,7 +30,6 @@ public class StringCalculatorTest {
     @Test
     public void testAddSingleNumber() {
 
-        StringCalculator calculator = new StringCalculator();
         // assert statements
         assertEquals("\"1\" must be 1", 1, calculator.add("1"));
         assertEquals("\"2\" must be 2", 2, calculator.add("2"));
@@ -33,7 +39,6 @@ public class StringCalculatorTest {
     @Test
     public void testAddTwoNumbers() {
 
-        StringCalculator calculator = new StringCalculator();
         // assert statements
         assertEquals("\"1,2\" must be 3", 3, calculator.add("1,2"));
     }
@@ -41,7 +46,6 @@ public class StringCalculatorTest {
     @Test
     public void testOnePositiveAndOneNegativeNumbers() {
 
-        StringCalculator calculator = new StringCalculator();
         // assert statements
         assertEquals("\"1,-2\" must be -1", -1, calculator.add("1,-2"));
     }
@@ -49,7 +53,6 @@ public class StringCalculatorTest {
     @Test
     public void testAddTwoNegativeNumbers() {
 
-        StringCalculator calculator = new StringCalculator();
         // assert statements
         assertEquals("\"-1,-2\" must be -3", -3, calculator.add("-1,-2"));
     }

@@ -37,5 +37,21 @@ public class StringCalculatorTest {
         // assert statements
         assertEquals("\"1,2\" must be 3", 3, calculator.add("1,2"));
     }
+
+    @Test
+    public void testOnePositiveAndOneNegativeNumbers() {
+
+        StringCalculator calculator = new StringCalculator();
+        // assert statements
+        assertEquals("\"1,-2\" must be -1", -1, calculator.add("1,-2"));
+    }
+
+    @Test
+    public void testAddTwoNegativeNumbers() {
+
+        StringCalculator calculator = new StringCalculator();
+        // assert statements
+        assertEquals("\"-1,-2\" must be -3", -3, calculator.add("-1,-2"));
+    }
 }
 

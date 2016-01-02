@@ -2,11 +2,12 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class StringCalculatorTest {
 
-
     StringCalculator calculator;
+
     @Before
     public void setup() {
 
@@ -35,6 +36,13 @@ public class StringCalculatorTest {
         assertEquals("\"2\" must be 2", 2, calculator.add("2"));
     }
 
+    @Test
+    public void testAddSingleNumberFalse() {
+
+        // assert statements
+        assertNotEquals ("\"1\" must not be 0", 0, calculator.add("1"));
+        assertNotEquals ("\"2\" must not be 1", 1, calculator.add("2"));
+    }
 
     @Test
     public void testAddTwoNumbers() {
@@ -55,6 +63,13 @@ public class StringCalculatorTest {
 
         // assert statements
         assertEquals("\"-1,-2\" must be -3", -3, calculator.add("-1,-2"));
+    }
+
+    @Test
+    public void testAddTwoNumbersFalse() {
+
+        // assert statements
+        assertNotEquals("\"1,2\" must not be 2", 2, calculator.add("1,2"));
     }
 }
 

@@ -1,4 +1,6 @@
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertArrayEquals;
 
@@ -15,10 +17,12 @@ public class DelimiterParserTest {
     @Test
     public void testParseDelimiters() {
 
-        DelimiterParser delimiters = new DelimiterParser();
+        DelimiterParser delimiterParser = new DelimiterParser();
+
+        delimiterParser.parse("//;\n1;2");
+
         // assert statements
-        assertArrayEquals(new String[]{";"}, delimiters.parse("//;\n1;2"));
-        assertArrayEquals(new String[]{"*"}, delimiters.parse("//*\n1;2"));
+        assertArrayEquals(new String[]{""}, delimiterParser.getDelimiters());
     }
 
     @Test

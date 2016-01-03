@@ -1,13 +1,21 @@
 
 public class DelimiterParser {
 
-    public String[] parse(String str) {
+    // default delimiters
+    String[] delimiters = new String[]{",", "\n"};
 
-        if (str.startsWith("//") && str.indexOf("\n") >= 0) {
-            return new String[] {str.substring(2, str.indexOf("\n"))};
+    public String parse(String str) {
+
+        if (str.startsWith("//") && str.indexOf("\n") > 0) {
+            delimiters = new String[] {str.substring(2, str.indexOf("\n"))};
+            return str.substring(str.indexOf("\n") + 1);
         }
-        //return defaults
-        return new String[] {",", "\n"};
+
+        return str;
+    }
+
+    public String[] getDelimiters() {
+        return delimiters;
     }
 
     public String[] split(String str) {

@@ -49,5 +49,12 @@ public class DelimiterParserTest {
         // assert statements
         assertArrayEquals(new int[]{1, 2, 3}, delimiterParser.split());
     }
+    @Test
+    public void testSplitDelimitersAnyLength() throws Exception {
 
+        delimiterParser.parse("//[**]\n1**2**3");
+
+        // assert statements
+        assertArrayEquals(new int[]{1, 2, 3}, delimiterParser.split());
+    }
 }

@@ -15,6 +15,7 @@ public class StringCalculator {
 
         int sum = 0;
         for (int i=0; i < nums.length; i++) {
+            if (nums[i] < 0) throw new NegativesNotAllowedException();
             sum += nums[i];
         }
 

@@ -33,7 +33,7 @@ public class DelimiterParserTest {
         String body = delimiters.parse("//;\n1;2");
 
         // assert statements
-        assertEquals("Parse delimiters and return body", "", body);
+        assertEquals("Parse delimiters and return body", "1;2", body);
     }
 
     @Test

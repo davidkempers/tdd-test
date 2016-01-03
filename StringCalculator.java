@@ -26,6 +26,8 @@ public class StringCalculator {
         for (int i=0; i < numbers.length; i++) {
             if (numbers[i] < 0) {
                 errors +=  ", " + new Integer(numbers[i]).toString();
+            } else if (numbers[i] > 1000) {
+                numbers[i] = 0;
             }
         }
         if (!errors.isEmpty()) {

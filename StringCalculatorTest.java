@@ -85,5 +85,12 @@ public class StringCalculatorTest {
         // assert statements
         assertEquals("\"//;\n1;2\n3\" must be 6", 6, calculator.add("//;\n1;2;3"));
     }
+
+    @Test(expected=NegativesNotAllowedException.class)
+    public void testAddNegativeNumbersSetDelimiters() throws Exception {
+
+        // assert statements
+        assertEquals("\"//;\n1;-2;3\" must be 2", 2, calculator.add("//;\n1;-2;3"));
+    }
 }
 

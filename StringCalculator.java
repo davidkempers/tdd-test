@@ -11,14 +11,27 @@ public class StringCalculator {
 
         delimiterParser.parse(numbers);
 
-        int nums[] = delimiterParser.split();
+        int nums[] = filterNumbers(delimiterParser.split());
 
         int sum = 0;
         for (int i=0; i < nums.length; i++) {
-            if (nums[i] < 0) throw new NegativesNotAllowedException();
             sum += nums[i];
         }
 
         return sum;
+    }
+
+    private int[] filterNumbers(int[] numbers) throws NegativesNotAllowedException{
+        String errors = "";
+        for (int i=0; i < numbers.length; i++) {
+            if (numbers[i] < 0) {
+                errors +=  ", " + new Integer(numbers[i]).toString();
+            }
+        }
+        if (!errors.isEmpty()) {
+            throw new NegativesNotAllowedException("Invalid negative numbers: " + errors.substring(2));
+        }
+
+        return numbers;
     }
 }

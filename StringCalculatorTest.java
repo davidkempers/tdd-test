@@ -22,14 +22,14 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void testEmptyStringShouldReturnZero() {
+    public void testEmptyStringShouldReturnZero() throws Exception {
 
         // assert statements
         assertEquals("\"\" must be 0", 0, calculator.add(""));
     }
 
     @Test
-    public void testAddSingleNumber() {
+    public void testAddSingleNumber() throws Exception {
 
         // assert statements
         assertEquals("\"1\" must be 1", 1, calculator.add("1"));
@@ -37,7 +37,7 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void testAddSingleNumberFalse() {
+    public void testAddSingleNumberFalse() throws Exception {
 
         // assert statements
         assertNotEquals ("\"1\" must not be 0", 0, calculator.add("1"));
@@ -45,38 +45,45 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void testAddTwoNumbers() {
+    public void testAddTwoNumbers() throws Exception {
 
         // assert statements
         assertEquals("\"1,2\" must be 3", 3, calculator.add("1,2"));
     }
 
     @Test
-    public void testOnePositiveAndOneNegativeNumbers() {
+    public void testOnePositiveAndOneNegativeNumbers() throws Exception {
 
         // assert statements
         assertEquals("\"1,-2\" must be -1", -1, calculator.add("1,-2"));
     }
 
     @Test
-    public void testAddTwoNegativeNumbers() {
+    public void testAddTwoNegativeNumbers() throws Exception {
 
         // assert statements
         assertEquals("\"-1,-2\" must be -3", -3, calculator.add("-1,-2"));
     }
 
     @Test
-    public void testAddMultipleNumbers() {
+    public void testAddMultipleNumbers() throws Exception {
 
         // assert statements
         assertEquals("\"1,2,3\" must be 6", 6, calculator.add("1,2,3"));
     }
 
     @Test
-    public void testAddMultipleNumbersMultipleDelimiters() {
+    public void testAddMultipleNumbersMultipleDelimiters() throws Exception {
 
         // assert statements
         assertEquals("\"1,2\n3\" must be 6", 6, calculator.add("1,2\n3"));
+    }
+
+    @Test
+    public void testAddMultipleNumbersSetDelimiters() throws Exception {
+
+        // assert statements
+        assertEquals("\"//;\n1;2\n3\" must be 6", 4, calculator.add("//;\n1;2;3"));
     }
 }
 

@@ -15,6 +15,7 @@ public class DelimiterParser {
 
         body = str;
         String delimiter = "";
+        ArrayList<String> delimiterList = new ArrayList<String>();
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             switch(state) {
@@ -45,14 +46,24 @@ public class DelimiterParser {
                     }
                     break;
                 case CLOSE:
-                    // we are finished
-                    delimiters = new String[] {delimiter};
-                    if (c == '\n') {
-                        body = str.substring(i + 1);
+                    delimiterList.add(delimiter);
+                    delimiter = "";
+
+                    if (c == '[') {
+                        // new delimiter
+                        state = States.OPEN;
                     } else {
-                        body = str.substring(i);
+                        // we are finished
+                        if (c == '\n') {
+                            body = str.substring(i + 1);
+                        } else {
+                            body = str.substring(i);
+                        }
+
+                        delimiters = delimiterList.toArray(new String[delimiterList.size()]);
+                        return body;
                     }
-                    return body;
+                    break;
             }
         }
         return body;
@@ -73,8 +84,9 @@ public class DelimiterParser {
             for (int i = 0; i< delimiters[j].length(); i++) {
                 delimiter += "\\" + delimiters[j].charAt(i);
             }
-            regex = "|" + delimiter;
+            regex += "|" + delimiter;
         }
+
         String[] result = body.split(regex.substring(1));
 
         int[] numbers = new int[result.length];

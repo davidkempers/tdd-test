@@ -41,6 +41,6 @@ public class DelimiterParserTest {
 
         DelimiterParser delimiters = new DelimiterParser();
         // assert statements
-        assertArrayEquals(new int[]{1, 2}, delimiters.split("//;\n1;2;3"));
+        assertArrayEquals(new int[]{1, 2, 3}, delimiters.split("//;\n1;2;3"));
     }
 }

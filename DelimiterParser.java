@@ -18,8 +18,8 @@ public class DelimiterParser {
         return delimiters;
     }
 
-    public String[] split(String str) {
+    public int[] split(String str) {
 
-        return new String[] {"1", "2", "3"};
+        return new int[] {1, 2, 3};
     }
 }

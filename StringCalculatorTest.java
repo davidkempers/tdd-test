@@ -92,5 +92,12 @@ public class StringCalculatorTest {
         // assert statements
         assertEquals("\"//;\n1;-2;3\" must be 2", 2, calculator.add("//;\n1;-2;3"));
     }
+
+    @Test
+    public void testAddMultipleNumbersOver1000SetDelimiters() throws Exception {
+
+        // assert statements
+        assertEquals("\"//;\n1;2000\n3\" must be 4", 4, calculator.add("//;\n1;2000;3"));
+    }
 }
 

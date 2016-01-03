@@ -37,10 +37,13 @@ public class DelimiterParserTest {
     }
 
     @Test
-    public void testSplitDelimiters() {
+    public void testSplitDelimiters() throws Exception {
 
         DelimiterParser delimiters = new DelimiterParser();
+
+        delimiters.parse("//;\n1;2;3");
+
         // assert statements
-        assertArrayEquals(new int[]{1, 2, 3}, delimiters.split("//;\n1;2;3"));
+        assertArrayEquals(new int[]{1, 2, 3}, delimiters.split());
     }
 }

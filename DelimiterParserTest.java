@@ -22,7 +22,7 @@ public class DelimiterParserTest {
         delimiterParser.parse("//;\n1;2");
 
         // assert statements
-        assertArrayEquals(new String[]{""}, delimiterParser.getDelimiters());
+        assertArrayEquals(new String[]{";"}, delimiterParser.getDelimiters());
     }
 
     @Test

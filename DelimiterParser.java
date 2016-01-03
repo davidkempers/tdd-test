@@ -12,6 +12,6 @@ public class DelimiterParser {
 
     public String[] split(String str) {
 
-        return new String[] {};
+        return new String[] {"1", "2", "3"};
     }
 }

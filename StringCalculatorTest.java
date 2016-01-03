@@ -83,7 +83,7 @@ public class StringCalculatorTest {
     public void testAddMultipleNumbersSetDelimiters() throws Exception {
 
         // assert statements
-        assertEquals("\"//;\n1;2\n3\" must be 6", 4, calculator.add("//;\n1;2;3"));
+        assertEquals("\"//;\n1;2\n3\" must be 6", 6, calculator.add("//;\n1;2;3"));
     }
 }
 

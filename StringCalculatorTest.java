@@ -51,14 +51,14 @@ public class StringCalculatorTest {
         assertEquals("\"1,2\" must be 3", 3, calculator.add("1,2"));
     }
 
-    @Test
+    @Test(expected=NegativesNotAllowedException.class)
     public void testOnePositiveAndOneNegativeNumbers() throws Exception {
 
         // assert statements
         assertEquals("\"1,-2\" must be -1", -1, calculator.add("1,-2"));
     }
 
-    @Test
+    @Test(expected=NegativesNotAllowedException.class)
     public void testAddTwoNegativeNumbers() throws Exception {
 
         // assert statements

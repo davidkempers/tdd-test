@@ -26,6 +26,17 @@ public class DelimiterParserTest {
     }
 
     @Test
+    public void testParseDelimitersBody() {
+
+        DelimiterParser delimiters = new DelimiterParser();
+
+        String body = delimiters.parse("//;\n1;2");
+
+        // assert statements
+        assertEquals("Parse delimiters and return body", "", body);
+    }
+
+    @Test
     public void testSplitDelimiters() {
 
         DelimiterParser delimiters = new DelimiterParser();

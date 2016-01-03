@@ -21,4 +21,11 @@ public class DelimiterParserTest {
         assertArrayEquals(new String[]{"*"}, delimiters.parse("//*\n1;2"));
     }
 
+    @Test
+    public void testSplitDelimiters() {
+
+        DelimiterParser delimiters = new DelimiterParser();
+        // assert statements
+        assertArrayEquals(new String[]{"1", "2", "3"}, delimiters.split("//;\n1;2;3"));
+    }
 }

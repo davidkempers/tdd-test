@@ -9,4 +9,9 @@ public class DelimiterParser {
         //return defaults
         return new String[] {",", "\n"};
     }
+
+    public String[] split(String str) {
+
+        return new String[] {};
+    }
 }

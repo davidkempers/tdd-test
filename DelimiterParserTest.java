@@ -17,7 +17,7 @@ public class DelimiterParserTest {
 
         DelimiterParser delimiters = new DelimiterParser();
         // assert statements
-        assertArrayEquals(new String[]{"1","2","3"}, delimiters.parse("1,2\n3"));
+        assertArrayEquals(new String[]{";"}, delimiters.parse("//;\n1;2"));
     }
 
 }
